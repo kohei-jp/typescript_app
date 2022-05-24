@@ -1,13 +1,12 @@
 ### 書籍: Typescriptハンズオン を Q &A形式で一部纏めました。
 
-問1 P.56
-let x: numberの :number の部分を何というか。
+問1 P.56  
+let x: numberの :number の部分を何というか。  
 A. 型アノテーション
 
 
 
-問2 P.58
-
+問2 P.58  
 以下を実行するとどうなるか。
 
 ```ts
@@ -19,12 +18,12 @@ console.log(x);
 ```
 
 A. 123とokが出力される。 
-　*let x* の様にただ変数を定義しただけで型の指定はしていないので、自動的にどんな値でも設定可能な<u>any 型</u>になる。typescriptの恩恵を受けられなくなるので、any型は通常使わない。
+*let x* の様にただ変数を定義しただけで型の指定はしていないので、自動的にどんな値でも設定可能な<u>any 型</u>になる。  
+typescriptの恩恵を受けられなくなるので、any型は通常使わない。
 
 
 
-問3 P.60
-
+問3 P.60  
 以下の例ではエラーが起こるが、yを数値変換する方法は？
 
 ```ts
@@ -35,7 +34,6 @@ x = y;
 ```
 
 A. 
-
 ```ts
 ・値の前に + をつける。　
 　x = +y;
@@ -47,7 +45,7 @@ A.
 
 
 
-問4 P.77
+問4 P.77  
 [1,2,3]などの数値の入る配列の型定義は？
 
 A. const data: number[]= [1,2,3] となる。
@@ -55,7 +53,7 @@ A. const data: number[]= [1,2,3] となる。
 
  
 
-問5 P.78
+問5 P.78  
 data1:number = [1,2,3] とあった場合に、配列を変更できない様にするにはどうするか
 
 A. readonlyを付ける。
@@ -72,7 +70,7 @@ console.log(data1) // => 変更できる
 
 
 
-問6 P.82
+問6 P.82  
 配列に異なる型の値を保管する時に使用する型は何か
 ex) [ 名前, 年齢 ]
 
@@ -86,9 +84,8 @@ console.log(customer)
 
 
 
-問7 P.84
+問7 P.84  
 ジャンケンのプログラムを作成する際に、グー・チョキ・パーしか選べない型を作りたい。
-
 
 
 A. enum 型 { 項目1, 項目2, ... } を使用する.
@@ -116,7 +113,7 @@ switch(you) {
 
 
 
-問8 P.86
+問8 P.86  
 問6で使用したタプル型について、 *let customer:[string, number]* の配列内の各型名をそれぞれ型エイリアスを使用し分かりやすくしてください。
 
 A.
@@ -135,7 +132,7 @@ console.log(customer)
 
 
 
-問9 P.88
+問9 P.88  
 問8で配列内の値の型を*type aliase*を使用しそれぞれ定義したが、[name, age]という配列自体を*type aliase*を使用し定義してください。
 
 A. 
@@ -162,7 +159,7 @@ for(let item of data){
 
 
 
-問10 P.89
+問10 P.89  
 リテラル型(ex. 'hello')のtype aliaseを作成してください。
 
 A. 
@@ -178,7 +175,7 @@ const greeting:hello = 'hello'
 
 
 
-問11 P.90
+問11 P.90  
 複数のリテラル型( 'hello', 'Hi', 'bye' )を許可する条件型(Conditional Types)を作成してください。
 
 A. 
@@ -190,7 +187,7 @@ const morningGreeting:greet = 'hello'
 
 
 
-問12 P.91
+問12 P.91  
 以下のdataを読み取り専用にしてください
 
 ```ts
@@ -217,7 +214,7 @@ console.log(y)
 
 
 
-問13 P.90
+問13 P.90  
 複数のリテラル型( 'hello', 'Hi', 'bye' )を許可する条件型(Conditional Types)を作成してください。
 
 A. 
@@ -229,7 +226,7 @@ const morningGreeting:greet = 'hello'
 
 
 
-問14 P.91
+問14 P.91  
 次のタプル型において、nameはnullを許可しない、ageはnullを許可するようにように書き換えて下さい。
 
 ```
@@ -246,7 +243,7 @@ type data = [name!: string, age?: number]
 
 
 
-問15 P.90
+問15 P.90  
 複数のリテラル型( 'hello', 'Hi', 'bye' )を許可する条件型(Conditional Types)を作成してください。
 
 A. 
@@ -258,7 +255,7 @@ const morningGreeting:greet = 'hello'
 
 
 
-問16 P.107
+問16 P.107  
 以下の関数の引数と戻り値の型を定義して下さい。
 
 ```ts
@@ -282,7 +279,7 @@ function calcTax(price:number):[price: number, tax: number] {
 
 
 
-問17 P.112
+問17 P.112  
 以下の関数の引数に初期値(1000)を与えて下さい。
 
 ```ts
@@ -305,7 +302,7 @@ function calcTax(price:number = 1000):[price: number, tax: number] {
 
 
 
-問18 P.112
+問18 P.112  
 以下の関数の引数に初期値(1000)を与えて下さい。
 
 ```ts
@@ -328,7 +325,7 @@ function calcTax(price:number = 1000):[price: number, tax: number] {
 
 
 
-問19 P.117
+問19 P.117  
 以下の関数を無名関数とアロー関数に書き換えて下さい。
 
 ```ts
@@ -347,7 +344,7 @@ const calcTax2 = (price:number=1000):[price: number, tax: number] => {...}
 
 
 
-問20 P.120
+問20 P.120  
 内部関数(inF)を使用するメリットは？
 
 ```
@@ -369,7 +366,7 @@ A.
 他で使用されない、その場限りの関数の場合、内部で定義した方が構文内で利用範囲を限定できる。
 知らないところで、名前が被ってバグを生む可能性も無くなる。
 
-問21 P.121
+問21 P.121  
 関数を引数として受け取る関数を定義して下さい。
 ※ 関数の型はFunctionとすること。
 
@@ -385,7 +382,7 @@ const double = (n:number) => n * 2
 calcNumber(1000, double)
 ```
 
-問22 P.123
+問22 P.123  
 問21で引数として、渡した関数fの引数や戻り値の型を具体的に記載下さい。
 
 A. 
@@ -404,7 +401,7 @@ calcNumber(1000, double)
 
 
 
-問23 P.125
+問23 P.125  
 戻り値に関数を渡す関数を定義ください。
 
 A. 
@@ -423,7 +420,7 @@ console.log(f1(price)) // fに、tax=0.1, n=priceになる。
 
 
 
-問24 P.130
+問24 P.130  
 以下の結果は何が出力されるか。
 
 ```ts
@@ -450,7 +447,7 @@ f1 を実行した際の戻り値は、f関数になり、その中で定義し�
 
 
 
-問25 P.138
+問25 P.138   
 以下のジェネリクス型のメリットは何か
 
 ```ts
@@ -484,8 +481,7 @@ function getRnd(values: any[]): any {
 
 
 
-問26 P. 144
-
+問26 P. 144  
 以下の非同期関数を解説して下さい。
 
 ```ts
@@ -519,7 +515,7 @@ setter, getterなどは後で纏める
 
 
 
-問27 P.187
+問27 P.187  
 クラスを定義するときにinterfaceを渡すメリットは何か。
 クラスを定義するときにどんな制約が生まれるか。
 
@@ -552,7 +548,7 @@ class Person implements Human {
 }
 ```
 
-問28 P. 189
+問28 P. 189  
 複数のクラスで同じinterfaceをimplementsするメリットは何か。
 
 A. 
@@ -583,7 +579,7 @@ for(let item of data) {
 
 
 
-問29 P. 190
+問29 P.190  
 interfaceを継承したサンプルを作成して下さい
 
 A. 
@@ -601,7 +597,7 @@ interface People extends Human {
 
 
 
-問30 P.192
+問30 P.192  
 抽象クラスを定義して下さい。
 
 A. 
@@ -695,7 +691,7 @@ ichiro.hello();
 
 
 
-問32 P.194
+問32 P.194  
 静的メンバーを利用するメリットは何か
 
 A.
@@ -728,7 +724,7 @@ StaticHuman.set('hanako',28)
 StaticHuman.print()
 ```
 
-問33 P.196
+問33 P.196  
 以下のHumanクラスのconstructor内では何も記述がないが、```print```メソッドが実行出来ている。
 これはなぜか。
 
@@ -753,7 +749,7 @@ A.
 constructorにreadonlyを指定した引数を用意すると、読み取りのみのプロパティとして扱える。
 これを「パラメータプロパティ」という。
 
-問34 P.196
+問34 P.196  
 ジェネリクス型を用いてクラスを定義して下さい。
 
 A.
@@ -868,7 +864,7 @@ taro.print()
 A.
 yes
 
-問38 P.206
+問38 P.206  
 メモアプリの解説をして下さい。
 
 ```tsx
@@ -934,7 +930,7 @@ window.addEventListener('load',()=>{ // DOMオブジェクトが生成された�
 
 
 
-問39 P.217
+問39 P.217   
 map型を定義して下さい。
 また、stringのキーにstringの値を保管するmap型を定義して下さい。
 
@@ -969,7 +965,7 @@ console.log(data1)
 } 
 ```
 
-問40 P.218
+問40 P.218  
 enumのキーを指定して、map型を定義して下さい。
 ``` enum human { name='name', mail='mail' } ```
 
@@ -1001,7 +997,7 @@ A.
 全てエラーとなる。キーにenumや複数の値を指定すると、それら全てをキーとして持たせないといけなくなる。
 → 予め用意されているプロパティを強制する事ができる。
 
-問41 P.222
+問41 P.222  
 以下、StudentクラスとEmployeeクラスを一つにまとめたPeople型を定義して下さい。
 
 ```ts
@@ -1047,7 +1043,7 @@ type People = Student | Employee
 
 
 
-問42 P.222
+問42 P.222  
 問41にあるPeople型を使用し、studentとemployeeのインスタンスを生成して下さい。
 また、printメソッドを実行して下さい。
 
@@ -1067,7 +1063,7 @@ StudentとEmployeeでnameとprintメソッドは共通しており、「**ユニ
 
 
 
-問43 P.224
+問43 P.224  
 問41にあるように、printメソッドはStudentクラスとEmployeeクラスで共通していたために、呼びだす事が出来た。
 共通していないメソッドを呼び出す際には、どうすればよいか。
 
@@ -1151,7 +1147,7 @@ console.log(taro)
 
 
 
-参考 P.236　名前空間 namespace
+参考 P.236　名前空間 namespace  
 関数やクラス名の衝突を防ぐために、名前空間を利用する。
 以下の様に、namespaceを使用する。参照する際には、名前空間.関数名の様に呼び出す。
 
@@ -1200,7 +1196,7 @@ mydata.print()
 
 
 
-問46 P.244
+問46 P.244  
 typescriptでは、複数のクラスを継承(多重継承)することができるか。
 
 A.
@@ -1272,7 +1268,7 @@ me.print()
 
 
 
-問47 P.275
+問47 P.275  
 以下のままでは、title.hrefでElementクラスにはhrefプロパティがなくエラーが出ます。修正して下さい。
 
 ```ts
