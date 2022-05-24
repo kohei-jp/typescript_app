@@ -1,8 +1,67 @@
-import { MyData } from './lib'
+let nickname:HTMLInputElement
+let message:HTMLInputElement
+let table:HTMLTableElement
+const url = 'https://typescript-app-e6875-default-rtdb.firebaseio.com/boards.json'
 
-const mydata = new MyData()
-mydata.add('taro', 39)
-mydata.add('hanako',28)
-mydata.add('sachiko', 17)
-mydata.add('jiro', 6)
-mydata.print()
+function doAction():void {
+    const data = {
+        nickname: nickname.value,
+        message: message.value,
+        posted: new Date().getTime()
+    }
+    sendData(url, data)
+}
+
+function doDelete():void {
+    fetch(url, {
+        method:'DELETE'
+    }).then(res=>{
+        console.log(res.statusText)
+        getData(url)
+    })
+}
+
+function sendData(url:string, data:object) {
+    fetch(url, {
+        method:'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(res=>{
+        console.log(res.statusText)
+        getData(url)
+    })
+}
+
+function getData(url:string) {
+    fetch(url).then(res=>res.json()).then(re=> {
+        let result = `<thead>
+                          <tr><th>Message</th>
+                          <th>Nickname</th>
+                          <th>posted</th></tr>
+                      </thead><tbody>`
+        let tb = ''
+        for(let ky in re) {
+            let item = re[ky]
+            tb = '<tr><td>' + item['message'] + '</td><td>'
+                + item['nickname'] + '</td><td>' 
+                + new Date(item['posted']).toLocaleString()
+                + '</td></tr>' + tb
+        }
+        result += tb + '</tbody>'
+        table.innerHTML = result
+    })
+}
+
+window.addEventListener('load',()=>{
+    message = document.querySelector('#message')
+    nickname = document.querySelector('#nickname')
+    table = document.querySelector('#table')
+    const btn :HTMLButtonElement =  document.querySelector('#btn')
+    btn.onclick = doAction
+    const del :HTMLButtonElement =  document.querySelector('#delete')
+    del.onclick = doDelete
+    getData(url)
+})
